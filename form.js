@@ -29,30 +29,4 @@ formRegistro.addEventListener("submit", function (event) {
 });
 
 
-const formLogin = document.getElementById("formLogin");
 
-formLogin.addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  const correoLogin = document.getElementById("correoLogin").value.trim();
-  const passwordLogin = document.getElementById("passwordLogin").value.trim();
-
-  if (!validarCorreo(correoLogin)) {
-    alert("Por favor ingresa un correo válido.");
-    return;
-  }
-
-  if (passwordLogin === "") {
-    alert("Debes ingresar tu contraseña.");
-    return;
-  }
-
-  alert(" ¡Bienvenido de nuevo a Lavender Vinilos Store!");
-  formLogin.reset();
-});
-
-
-function validarCorreo(correo) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(correo);
-}
